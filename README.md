@@ -7,9 +7,9 @@
 <h2 align="center">Helang for Visual Studio Code</h2>
 
 <p align=center>
-<a href="#"><img alt="version" src="http://vsmarketplacebadge.apphb.com/version/glut410.vscode-helang.svg"></a>
-<a href="#"><img alt="install" src="http://vsmarketplacebadge.apphb.com/installs/glut410.vscode-helang.svg"></a>
-<a href="#"><img alt="rating" src="http://vsmarketplacebadge.apphb.com/rating-star/glut410.vscode-helang.svg"></a>
+<a href="#"><img alt="version" src="https://vsmarketplacebadge.apphb.com/version/glut410.vscode-helang.svg"></a>
+<a href="#"><img alt="install" src="https://vsmarketplacebadge.apphb.com/installs/glut410.vscode-helang.svg"></a>
+<a href="#"><img alt="rating" src="https://vsmarketplacebadge.apphb.com/rating-star/glut410.vscode-helang.svg"></a>
 
 # 什么是Helang？
 
