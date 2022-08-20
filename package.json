@@ -1,5 +1,5 @@
 {
-  "name": "vscode-vlang",
+  "name": "vscode-helang",
   "displayName": "Helang",
   "description": "A Next-Generation Cyber Programming Language from Li Tang.",
   "publisher": "glut410",
@@ -28,7 +28,7 @@
   ],
   "contributes": {
     "languages": [{
-      "id": "helang",
+      "id": "vscode-helang",
       "aliases": ["Helang", "helang"],
       "extensions": [".he"],
       "configuration": "./language-configuration.json"
