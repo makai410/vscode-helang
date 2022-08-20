@@ -1,6 +1,7 @@
 <p align="center">
    <a href="https://space.bilibili.com/163637592" target="_blank" rel="noopener noreferrer">
-      <img width="300" src="/images/logo.svg" alt="Logo">
+      <img width="300" src="/images/logo.png" alt="Logo">
+      
    </a>
 </p>
 <h2 align="center">Helang for Visual Studio Code</h2>
