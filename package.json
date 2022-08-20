@@ -3,7 +3,7 @@
   "displayName": "Helang",
   "description": "A Next-Generation Cyber Programming Language from Li Tang.",
   "publisher": "glut410",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "icon": "images/logo.png",
   "license": "MIT",
   "engines": {
