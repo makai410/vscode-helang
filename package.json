@@ -35,7 +35,7 @@
       "configuration": "./language-configuration.json"
     }],
     "grammars": [{
-      "language": "helang",
+      "language": "vscode-helang",
       "scopeName": "source.he",
       "path": "./syntaxes/helang.tmLanguage.json"
     }]
