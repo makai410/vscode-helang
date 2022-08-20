@@ -1,0 +1,313 @@
+{
+	
+	"name": "Helang",
+	"patterns": [
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#numbers"
+		},
+		{
+			"include": "#variables"
+		},
+		{
+			"include": "#comments"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#operators"
+		},
+		{
+			"include": "#constants"
+		},
+		{
+			"include": "#illegal-name"
+		},
+		{
+			"include": "#brackets"
+		},
+		{
+			"include": "#generic"
+		},
+		{
+			"include": "#function-decl"
+		},
+		{
+			"include": "#function-exist"
+		},
+		{
+			"include": "#punctuations"
+		}
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [{
+				"name": "keyword.control.helang",
+				"match": "\\b(if|else|break|continue|while|for|return|u8|test5g|print|sprint)\\b"
+			}]
+
+		},
+		"variables": {
+			"match": "[a-zA-Z_]\\w*(?:,\\s*[a-zA-Z_]\\w*)*(?=\\s*(?:=|:=))",
+			"captures": {
+				"0": {
+					"patterns": [
+						{
+							"match": "[a-zA-Z_]\\w*",
+							"name": "variable.other.assignment.helang"
+						},
+						{
+							"include": "#punctuation"
+						}
+					]
+				}
+			}
+		},
+		"comments": {
+			"patterns": [{
+				"name": "comment.block.documentation.helang",
+					"begin": "/\\*",
+					"beginCaptures": {
+						"0": {
+							"name": "punctuation.definition.comment.begin.helang"
+						}
+					},
+					"end": "\\*/",
+					"endCaptures": {
+						"0": {
+							"name": "punctuation.definition.comment.end.helang"
+						}
+					}
+			},
+			{
+				"name": "comment.line.double-slash.helang",
+				"begin": "//",
+				"beginCaptures": {
+					"0": {
+						"name": "punctuation.definition.comment.begin.helang"
+					}
+				},
+				"end": "$"
+			}]
+		},
+		"constants": {
+			"name": "constant.language.helang",
+			"match": "\\b(true|false|none)\\b"
+		},
+		"operators": {
+			"patterns": [
+				{
+					"name": "keyword.operator.arithmetic.helang",
+					"match": "(\\+|\\-|\\*|\\/|\\%|\\+\\+|\\-\\-|\\>\\>|\\<\\<)"
+				},
+				{
+					"name": "keyword.operator.relation.helang",
+					"match": "(\\=\\=|\\!\\=|\\>|\\<|\\>\\=|\\<\\=)"
+				},
+				{
+					"name": "keyword.operator.assignment.helang",
+					"match": "(\\:\\=|\\=|\\+\\=|\\-\\=|\\*\\=|\\/\\=|\\%\\=|\\&\\=|\\|\\=|\\^\\=|\\~\\=|\\&\\&\\=|\\|\\|\\=|\\>\\>\\=|\\<\\<\\=)"
+				},
+				{
+					"name": "keyword.operator.bitwise.helang",
+					"match": "(\\&|\\||\\^|\\~|<(?!<)|>(?!>))"
+				},
+				{
+					"name": "keyword.operator.logical.helang",
+					"match": "(\\&\\&|\\|\\||\\!)"
+				},
+				{
+					"name": "keyword.operator.optional.helang",
+					"match": "\\?"
+				}
+			]
+		},
+		"numbers": {
+			"patterns": [
+				{
+					"name": "constant.numeric.exponential.helang",
+					"match": "([0-9]+(_?))+(\\.)([0-9]+[eE][-+]?[0-9]+)"
+				},
+				{
+					"name": "constant.numeric.float.helang",
+					"match": "([0-9]+(_?))+(\\.)([0-9]+)"
+				},
+				{
+					"name": "constant.numeric.binary.helang",
+					"match": "(?:0b)(?:(?:[0-1]+)(?:_?))+"
+				},
+				{
+					"name": "constant.numeric.octal.helang",
+					"match": "(?:0o)(?:(?:[0-7]+)(?:_?))+"
+				},
+				{
+					"name": "constant.numeric.hex.helang",
+					"match": "(?:0x)(?:(?:[0-9a-fA-F]+)(?:_?))+"
+				},
+				{
+					"name": "constant.numeric.integer.helang",
+					"match": "(?:(?:[0-9]+)(?:[_]?))+"
+				}
+			]
+		},
+		"strings": {
+			"name": "string.quoted.double.helang",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.helang",
+					"match": "\\\\."
+				}
+			]
+		},
+		"punctuations": {
+			"patterns": [
+				{
+					"name": "punctuation.accessor.v",
+					"match": "(?:\\.)"
+				},
+				{
+					"name": "punctuation.separator.comma.v",
+					"match": "(?:,)"
+				}
+			]
+		},
+		"brackets": {
+			"patterns": [
+				{
+					"begin": "{",
+					"beginCaptures": {
+						"0": {
+							"name": "punctuation.definition.bracket.curly.begin.helang"
+						}
+					},
+					"end": "}",
+					"endCaptures": {
+						"0": {
+							"name": "punctuation.definition.bracket.curly.end.helang"
+						}
+					},
+					"patterns": [
+						{
+							"include": "$self"
+						}
+					]
+				},
+				{
+					"begin": "\\(",
+					"beginCaptures": {
+						"0": {
+							"name": "punctuation.definition.bracket.round.begin.helang"
+						}
+					},
+					"end": "\\)",
+					"endCaptures": {
+						"0": {
+							"name": "punctuation.definition.bracket.round.end.helang"
+						}
+					},
+					"patterns": [
+						{
+							"include": "$self"
+						}
+					]
+				},
+				{
+					"begin": "\\[",
+					"beginCaptures": {
+						"0": {
+							"name": "punctuation.definition.bracket.square.begin.helang"
+						}
+					},
+					"end": "\\]",
+					"endCaptures": {
+						"0": {
+							"name": "punctuation.definition.bracket.square.end.helang"
+						}
+					},
+					"patterns": [
+						{
+							"include": "$self"
+						}
+					]
+				}
+			]
+		},
+		"generic": {
+			"patterns": [
+				{
+					"name": "meta.definition.generic.helang",
+					"match": "(?<=[\\w\\s+])(\\<)(\\w+)(\\>)",
+					"captures": {
+						"1": {
+							"name": "punctuation.definition.bracket.angle.begin.helang"
+						},
+						"2": {
+							"patterns": [
+								{
+									"include": "#illegal-name"
+								},
+								{
+									"match": "\\w+",
+									"name": "entity.name.generic.helang"
+								}
+							]
+						},
+						"3": {
+							"name": "punctuation.definition.bracket.angle.end.helang"
+						}
+					}
+				}
+			]
+		},
+		"function-decl": {
+			"name": "meta.definition.function.helang",
+			"match": "^\\b(void|int|double|float|bool)\\b\\s+?(\\w+)((?<=[\\w\\s+])(\\<)(\\w+)(\\>))?(?=\\s*\\()",
+			"captures": {
+				"1": {
+					"name": "keyword.fn.helang"
+				},
+				"2": {
+					"name": "entity.name.function.helang"
+				}
+			}
+		},
+
+		"function-exist": {
+			"name": "meta.support.function.helang",
+			"match": "(\\w+)((?<=[\\w\\s+])(\\<)(\\w+)(\\>))?(?=\\s*\\()",
+			"captures": {
+				"0": {
+					"name": "meta.function.call.helang"
+				},
+				"1": {
+					"patterns": [
+						{
+							"include": "#illegal-name"
+						},
+						{
+							"match": "\\w+",
+							"name": "entity.name.function.helang"
+						}
+					]
+				},
+				"2": {
+					"patterns": [
+						{
+							"include": "#generic"
+						}
+					]
+				}
+			}
+		},
+		"illegal-name": {
+			"name": "invalid.illegal.helang",
+			"match": "\\d\\w+"
+		}
+	},
+	"scopeName": "source.he"
+}
